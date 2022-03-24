@@ -1,0 +1,197 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/score.wav" type="AudioStream" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://assets/font.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 1
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1, 12 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 8
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Score1" type="Label" parent="."]
+margin_top = 16.0
+margin_right = 144.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Label" parent="."]
+margin_left = 176.0
+margin_top = 16.0
+margin_right = 320.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="KinematicBody2D" parent="."]
+position = Vector2( 10, 42 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+key_up = "player1_up"
+key_down = "player1_down"
+
+[node name="Sprite" type="Sprite" parent="Player1"]
+scale = Vector2( 2, 24 )
+texture = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+shape = SubResource( 4 )
+
+[node name="Player2" type="KinematicBody2D" parent="."]
+position = Vector2( 310, 198 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+key_up = "player2_up"
+key_down = "player2_down"
+
+[node name="Sprite" type="Sprite" parent="Player2"]
+scale = Vector2( 2, 24 )
+texture = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource( 4 )
+
+[node name="WallUp" type="StaticBody2D" parent="."]
+position = Vector2( 160, -1 )
+scale = Vector2( 160, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallUp"]
+shape = SubResource( 5 )
+
+[node name="WalDown" type="StaticBody2D" parent="."]
+position = Vector2( 160, 241 )
+scale = Vector2( 160, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WalDown"]
+shape = SubResource( 5 )
+
+[node name="WalLeft" type="Area2D" parent="."]
+position = Vector2( -2, 120 )
+scale = Vector2( 1, 120 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WalLeft"]
+shape = SubResource( 5 )
+
+[node name="WalRight" type="Area2D" parent="."]
+position = Vector2( 322, 120 )
+scale = Vector2( 1, 120 )
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WalRight"]
+shape = SubResource( 5 )
+
+[node name="Score" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
+
+[node name="TimerNewGame" type="Timer" parent="."]
+pause_mode = 2
+wait_time = 2.0
+one_shot = true
+
+[node name="LabelGameOver" type="Label" parent="."]
+visible = false
+margin_left = 77.0
+margin_top = 108.0
+margin_right = 243.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 6 )
+text = "Player 1 won!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Help"]
+margin_left = 48.0
+margin_top = 152.0
+margin_right = 86.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 7 )
+text = "W = Up
+S = Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Help"]
+margin_left = 136.0
+margin_top = 205.0
+margin_right = 186.0
+margin_bottom = 213.0
+custom_fonts/font = SubResource( 7 )
+text = "Press Enter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Help"]
+margin_left = 224.0
+margin_top = 152.0
+margin_right = 278.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 7 )
+text = "Arrow keys
+Up and down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="WalLeft" to="." method="_on_player2_scored"]
+[connection signal="body_exited" from="WalLeft" to="." method="_on_ball_exited"]
+[connection signal="body_entered" from="WalRight" to="." method="_on_player1_scored"]
+[connection signal="body_exited" from="WalRight" to="." method="_on_ball_exited"]
+[connection signal="timeout" from="TimerNewGame" to="." method="_on_TimerNewGame_timeout"]

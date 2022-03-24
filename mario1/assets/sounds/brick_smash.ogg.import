@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/brick_smash.ogg-62e599497326dfb505e27e30c45a745c.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/brick_smash.ogg"
+dest_files=[ "res://.import/brick_smash.ogg-62e599497326dfb505e27e30c45a745c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

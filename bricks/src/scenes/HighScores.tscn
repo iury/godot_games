@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/scenes/HighScores.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/emulogic.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[node name="HighScores" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 556.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 32.0
+margin_right = 192.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
+text = "Bricks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -136.0
+margin_top = 144.0
+margin_right = 136.0
+margin_bottom = 187.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_constants/line_spacing = 12
+text = "High Scores"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelNames" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -182.0
+margin_top = 232.0
+margin_right = -92.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 3 )
+custom_constants/line_spacing = 12
+text = "AAA
+AAA
+AAA
+AAA
+AAA
+AAA
+AAA
+AAA
+AAA
+AAA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelScores" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -62.0
+margin_top = 232.0
+margin_right = 186.0
+margin_bottom = 664.0
+custom_fonts/font = SubResource( 3 )
+custom_constants/line_spacing = 12
+text = "10000
+10000
+10000
+10000
+10000
+10000
+10000
+10000
+10000
+10000"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

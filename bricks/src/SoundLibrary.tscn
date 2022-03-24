@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/SoundLibrary.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/fire.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/bounce.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/catch.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/up.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/dead.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/game_end.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/down.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/select.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/powerup.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/life.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/start.mp3" type="AudioStream" id=12]
+
+[node name="SoundLibrary" type="Node"]
+script = ExtResource( 1 )
+
+[node name="DEAD" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="GAME_END" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="LIFE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="POWERUP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="SELECT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="START" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="UP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Sfx"
+
+[node name="BOUNCE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Sfx"
+
+[node name="CATCH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sfx"
+
+[node name="DOWN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "Sfx"
+
+[node name="FIRE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Sfx"

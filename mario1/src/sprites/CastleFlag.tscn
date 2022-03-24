@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/graphics/sprites.png" type="Texture" id=1]
+
+[node name="CastleFlag" type="Sprite" groups=[
+"castle_flag",
+]]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 160, 16, 16 )

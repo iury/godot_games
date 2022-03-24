@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/down.mp3-1ba4caa6fa673a8399958002dfc8e84e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/down.mp3"
+dest_files=[ "res://.import/down.mp3-1ba4caa6fa673a8399958002dfc8e84e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

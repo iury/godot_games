@@ -1,0 +1,219 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/emulogic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/scenes/Menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="Menu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 556.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 32.0
+margin_right = 192.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
+text = "Bricks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -136.0
+margin_top = 144.0
+margin_right = 136.0
+margin_bottom = 187.0
+custom_fonts/font = SubResource( 2 )
+custom_constants/line_spacing = 12
+text = "by
+Iury Ramos Garcia"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 688.0
+margin_right = 192.0
+margin_bottom = 708.0
+custom_fonts/font = SubResource( 3 )
+text = "v1.0 (2021)"
+
+[node name="MainButtons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnContinue" type="Button" parent="MainButtons"]
+margin_left = 138.0
+margin_top = 320.0
+margin_right = 418.0
+margin_bottom = 356.0
+focus_previous = NodePath("../BtnQuitGame")
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnNewGame" type="Button" parent="MainButtons"]
+margin_left = 138.0
+margin_top = 376.0
+margin_right = 418.0
+margin_bottom = 412.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "new game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnHighScores" type="Button" parent="MainButtons"]
+margin_left = 138.0
+margin_top = 432.0
+margin_right = 418.0
+margin_bottom = 468.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "High Scores"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnSettings" type="Button" parent="MainButtons"]
+margin_left = 138.0
+margin_top = 488.0
+margin_right = 418.0
+margin_bottom = 524.0
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Settings"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnQuitGame" type="Button" parent="MainButtons"]
+margin_left = 138.0
+margin_top = 544.0
+margin_right = 418.0
+margin_bottom = 580.0
+focus_next = NodePath("../BtnContinue")
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Quit Game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnToggleFS" type="Button" parent="Settings"]
+margin_left = 56.0
+margin_top = 376.0
+margin_right = 500.0
+margin_bottom = 412.0
+custom_styles/focus = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Toggle Full Screen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnToggleSound" type="Button" parent="Settings"]
+margin_left = 56.0
+margin_top = 432.0
+margin_right = 500.0
+margin_bottom = 468.0
+custom_styles/focus = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Mute: Off"
+flat = true
+
+[node name="BtnGoBack" type="Button" parent="Settings"]
+margin_left = 56.0
+margin_top = 488.0
+margin_right = 500.0
+margin_bottom = 524.0
+custom_styles/focus = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 1, 0, 1 )
+text = "Go Back"
+flat = true
+
+[connection signal="pressed" from="MainButtons/BtnContinue" to="." method="_on_BtnContinue_pressed"]
+[connection signal="pressed" from="MainButtons/BtnNewGame" to="." method="_on_BtnNewGame_pressed"]
+[connection signal="pressed" from="MainButtons/BtnHighScores" to="." method="_on_BtnHighScores_pressed"]
+[connection signal="pressed" from="MainButtons/BtnSettings" to="." method="_on_BtnSettings_pressed"]
+[connection signal="pressed" from="MainButtons/BtnQuitGame" to="." method="_on_BtnQuitGame_pressed"]
+[connection signal="pressed" from="Settings/BtnToggleFS" to="." method="_on_BtnToggleFS_pressed"]
+[connection signal="pressed" from="Settings/BtnToggleSound" to="." method="_on_BtnToggleSound_pressed"]
+[connection signal="pressed" from="Settings/BtnGoBack" to="." method="_on_BtnGoBack_pressed"]

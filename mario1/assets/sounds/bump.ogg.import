@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bump.ogg-522e0732c322b11b7c0df1b41720cb87.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/bump.ogg"
+dest_files=[ "res://.import/bump.ogg-522e0732c322b11b7c0df1b41720cb87.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/wing.mp3-f59b2ec4004b8db435dc26cfc66dfd7a.mp3str"
+
+[deps]
+
+source_file="res://assets/wing.mp3"
+dest_files=[ "res://.import/wing.mp3-f59b2ec4004b8db435dc26cfc66dfd7a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

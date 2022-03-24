@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/underworld.ogg-65ee30a9e29f4de65bec0c2f3d87603d.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/underworld.ogg"
+dest_files=[ "res://.import/underworld.ogg-65ee30a9e29f4de65bec0c2f3d87603d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
